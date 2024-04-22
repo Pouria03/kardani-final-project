@@ -12,3 +12,17 @@ class CounselingDetailView(View):
     def get(self, request, id):
         counseling = get_counseling(id)
         return render(request, None, {'counseling':counseling})
+    
+
+# TODO: complete contact view
+class UserContactFormView(View):
+    """
+        Displaying and submiting
+        contact request of user
+        for getting counseling services
+    """
+    def get(self, request):
+        ...
+
+    def post(self, request):
+        ...
