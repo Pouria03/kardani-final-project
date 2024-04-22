@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import View
-from services import (get_all_posts,
+from .services import (get_all_posts,
                       get_post)
 
 # Create your views here.
