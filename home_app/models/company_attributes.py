@@ -21,3 +21,8 @@ class CompanyAttribute(models.Model):
 
     def __str__(self):
         return self.title
+    
+
+    class Meta:
+        verbose_name = 'مشتریان چرا باید شرکت ما را انتخاب کنند؟'
+        verbose_name_plural = 'مشتریان چرا باید شرکت ما را انتخاب کنند؟'

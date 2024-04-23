@@ -1,7 +1,7 @@
 from home_app.models import (CompanyAttribute,
                              CompanyInfo,
                              CompanyService,
-                             Customer)
+                             BoldCustomer)
 
 
 
@@ -9,8 +9,8 @@ def get_all_company_services():
     return CompanyService.objects.all()
 
 
-def get_all_customers():
-    return Customer.objects.all()
+def get_all_bold_customers():
+    return BoldCustomer.objects.all()
 
 
 def get_company_info():

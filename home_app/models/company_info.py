@@ -33,7 +33,6 @@ class CompanyInfo(models.Model):
     
     telegram = models.CharField(verbose_name='آی دی کانال یا چت تلگرام',
                                 max_length=50)
-    
 
 
     def __str__(self) -> str:
@@ -51,3 +50,8 @@ class CompanyInfo(models.Model):
         
         # If not, proceed with saving the record
         super().save(*args, **kwargs)
+
+
+    class Meta:
+        verbose_name = 'اطلاعات تماس شرکت'
+        verbose_name_plural = 'اطلاعات تماس شرکت'

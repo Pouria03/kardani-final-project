@@ -17,17 +17,24 @@ class Post(models.Model):
                             blank=False,
                             null=False,
                             max_length=100,
-                             help_text='نمایش در url مرورگر')
+                             help_text='نحوه نمایش عنوان مطلب در نوار ادرس مرورگر')
     # TODO: change to ckeditor
     content = models.TextField(max_length=2500,
                                blank=False,
-                                null=False)
+                                null=False,
+                                verbose_name='متن مطلب')
     
     created_at = models.DateField(auto_now_add=True)
     thumbnail = models.ImageField(upload_to='uploads/thumbnails/',
                                   blank=False,
-                                null=False)
+                                null=False,
+                                verbose_name='تصویر اصلی مطلب')
 
 
     def __str__(self):
         return self.title
+    
+
+    class Meta:
+        verbose_name = 'مطلب'
+        verbose_name_plural = 'مطالب'

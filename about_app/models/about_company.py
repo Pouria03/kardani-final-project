@@ -36,3 +36,8 @@ class AboutCompany(models.Model):
         
         # If not, proceed with saving the record
         super().save(*args, **kwargs)
+
+
+    class Meta:
+        verbose_name = 'توضیحات درباره شرکت و رئیس'
+        verbose_name_plural = 'توضیحات درباره شرکت و رئیس'

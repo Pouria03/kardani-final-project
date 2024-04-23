@@ -15,3 +15,7 @@ class Counseling(models.Model):
 
     def __str__(self):
         return self.title
+    
+    class Meta:
+        verbose_name = 'مشاوره'
+        verbose_name_plural = 'انواع مشاوره ها'

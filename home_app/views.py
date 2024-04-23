@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from .services import (get_all_company_services,
-                       get_all_customers,
+                       get_all_bold_customers,
                        get_company_attributes,
                        get_company_info)
 
@@ -17,7 +17,7 @@ class IndexView(View):
     def get(self, request):
         context = {
             'company_services' : get_all_company_services(),
-            'customers' : get_all_customers(),
+            'customers' : get_all_bold_customers(),
             'company_attrs' : get_company_attributes(),
             'comapny_general_info' : get_company_info()
         }
