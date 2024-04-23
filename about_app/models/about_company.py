@@ -3,7 +3,8 @@ from django.db import models
 
 
 class AboutCompany(models.Model):
-    comapny_name = models.CharField(verbose_name='نام شرکت')
+    comapny_name = models.CharField(max_length=75,
+                                    verbose_name='نام شرکت')
 
     description_about_company = models.TextField(max_length=1500,
                                                  verbose_name='درباره شرکت')

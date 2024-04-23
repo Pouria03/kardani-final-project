@@ -1,0 +1,2 @@
+from about_app.models.about_company import AboutCompany
+from about_app.models.frequent_questions import FrequentQuestion
