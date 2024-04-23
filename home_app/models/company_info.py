@@ -8,12 +8,25 @@ class CompanyInfo(models.Model):
         company to present it to its users and customers in 
         the website.
     """
-    email = models.EmailField(unique=True, verbose_name="ایمیل شرکت")
-    phone = models.CharField(max_length=11, verbose_name="موبایل شرکت")
-    tel = models.CharField(max_length=11, verbose_name="تلفن شرکت")
-    about_company = models.TextField(max_length=1000, verbose_name="توضیح و معرفی شرکت")
-    office_addres = models.CharField(max_length=500, verbose_name="ادرس محل دفتر")
+    email = models.EmailField(unique=True,
+                              verbose_name="ایمیل شرکت")
+    
+    phone = models.CharField(max_length=11,
+                              verbose_name="موبایل شرکت")
+    
+    tel = models.CharField(max_length=11,
+                            verbose_name="تلفن شرکت")
 
+    about_company = models.TextField(max_length=1000,
+                                      verbose_name="توضیح و معرفی شرکت")
+    
+    office_addres = models.CharField(max_length=500,
+                                      verbose_name="ادرس محل دفتر")
+    
+    intro_video = models.FileField(verbose_name='ویدیوی معرفی',
+                                   upload_to='uploads/videos/',
+                                   blank=True,
+                                   null=True)
 
     def __str__(self) -> str:
         return self.email
