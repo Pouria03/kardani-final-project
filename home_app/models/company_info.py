@@ -27,6 +27,14 @@ class CompanyInfo(models.Model):
                                    upload_to='uploads/videos/',
                                    blank=True,
                                    null=True)
+    
+    instagram = models.CharField(verbose_name='نام کاربری اکانت اینستاگرام',
+                                 max_length=50)
+    
+    telegram = models.CharField(verbose_name='آی دی کانال یا چت تلگرام',
+                                max_length=50)
+    
+
 
     def __str__(self) -> str:
         return self.email
