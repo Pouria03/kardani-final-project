@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+    <!-- intro-section (first section) -->
+	<section class="intro-section container-fluid">
+		<div class="intro-text">
+			<h1 class="home-intro-title">
+				مرکز مشاوره اقتصادی دکتر فولاد
+			</h1>
+			<p class="the-intro-desc">
+				لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و
+				متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
+				کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده
+				شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی
+				الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و
+				دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای
+				اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+
+			</p>
+			<div>
+				<a class="btn" href="{% url 'counseling_detail' 1 %}">مشاوره</a>
+				<a class="btn" href="{% url 'about' %}">درباره ما</a>
+			</div>
+		</div>
+		<div class="intro-video">
+			<video controls>
+				<source src="{% static 'vids/intro-video.mp4' %}" type="video/mp4">
+			</video>
+		</div>
+	</section>
+	<!-- end intro-section (first section) -->
+	<!-- services-section (second section) -->
+	<section class="services-section container-fluid">
+		<h2 class="section-title"><span class="section-title-first-word">خدمات</span> ویژه مشاوره اقتصادی</h2>
+		<div class="services">
+			<div class="service-card">
+				<div class="service-card-icon">
+					<!-- Your icon here -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+						class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+						<path
+							d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5M.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5" />
+						<path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+					</svg>
+				</div>
+				<div class="service-card-text">
+					مشاوره اقتصادی
+				</div>
+			</div>
+			<div class="service-card">
+				<div class="service-card-icon">
+					<!-- Your icon here -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+						class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+						<path
+							d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5M.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5" />
+						<path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+					</svg>
+				</div>
+				<div class="service-card-text">
+					مشاوره اقتصادی
+				</div>
+			</div>
+			<div class="service-card">
+				<div class="service-card-icon">
+					<!-- Your icon here -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+						class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+						<path
+							d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5M.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5" />
+						<path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+					</svg>
+				</div>
+				<div class="service-card-text">
+					مشاوره اقتصادی
+				</div>
+			</div>
+			<div class="service-card">
+				<div class="service-card-icon">
+					<!-- Your icon here -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+						class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+						<path
+							d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5M.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5" />
+						<path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+					</svg>
+				</div>
+				<div class="service-card-text">
+					مشاوره اقتصادی
+				</div>
+			</div>
+			<div class="service-card">
+				<div class="service-card-icon">
+					<!-- Your icon here -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+						class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+						<path
+							d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5M.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5" />
+						<path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+					</svg>
+				</div>
+				<div class="service-card-text">
+					مشاوره اقتصادی
+				</div>
+			</div>
+			<div class="service-card">
+				<div class="service-card-icon">
+					<!-- Your icon here -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+						class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+						<path
+							d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5M.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5" />
+						<path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+					</svg>
+				</div>
+				<div class="service-card-text">
+					مشاوره اقتصادی
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- end services-section (second section) -->
+	<!-- why-us-section (third section) -->
+	<section class="why-us-section container-fluid">
+		<h2 class="section-title"><span class="section-title-first-word">چرا </span>خدمات مرکز مشاوره ما؟</h2>
+		<div class="reasons">
+			<div class="reason-card">
+				<div class="reason-card-icon">
+					<!-- icon here -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+						class="bi bi-currency-dollar" viewBox="0 0 16 16">
+						<path
+							d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73z" />
+					</svg>
+				</div>
+				<div class="reason-card-text">
+					کوچینگ اقتصادی
+				</div>
+			</div>
+			<div class="reason-card">
+				<div class="reason-card-icon">
+					<!-- icon here -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+						class="bi bi-currency-dollar" viewBox="0 0 16 16">
+						<path
+							d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73z" />
+					</svg>
+				</div>
+				<div class="reason-card-text">
+					کوچینگ اقتصادی
+				</div>
+			</div>
+			<div class="reason-card">
+				<div class="reason-card-icon">
+					<!-- icon here -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+						class="bi bi-currency-dollar" viewBox="0 0 16 16">
+						<path
+							d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73z" />
+					</svg>
+				</div>
+				<div class="reason-card-text">
+					کوچینگ اقتصادی
+				</div>
+			</div>
+			<div class="reason-card">
+				<div class="reason-card-icon">
+					<!-- icon here -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+						class="bi bi-currency-dollar" viewBox="0 0 16 16">
+						<path
+							d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73z" />
+					</svg>
+				</div>
+				<div class="reason-card-text">
+					کوچینگ اقتصادی
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- end why-us-section (third section) -->
+	<!-- bold-customers-section (fourth section) -->
+	<section class="bold-customers-section container-fluid">
+		<h2 class="section-title"><span class="section-title-first-word">برخی </span>از مشتریان ما </h2>
+		<div class="horizontal-customer-list">
+			<div class="horizontal-customer-list__inner">
+				<div class="customer">
+					<img src="https://moshaverr.com/wp-content/uploads/2023/11/delpazir-logo1.png" alt="x">
+				</div>
+				<div class="customer">
+					<img src="https://moshaverr.com/wp-content/uploads/2023/11/Behpak.png" alt="x">
+				</div>
+				<div class="customer">
+					<img src="https://moshaverr.com/wp-content/uploads/2023/11/delpazir-logo1.png" alt="x">
+				</div>
+				<div class="customer">
+					<img src="https://moshaverr.com/wp-content/uploads/2023/11/pasargad.png" alt="x">
+				</div>
+				<div class="customer">
+					<img src="https://moshaverr.com/wp-content/uploads/2023/11/Behpak.png" alt="x">
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<!-- end customers-section (fourth section) -->
+
+{% endblock main %}

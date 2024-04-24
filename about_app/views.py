@@ -21,4 +21,4 @@ class AboutCompanyView(View):
             'frequent_questions' : frequent_questions
         }
 
-        return render(request, None, context)
+        return render(request, 'about_app/about.html', context)

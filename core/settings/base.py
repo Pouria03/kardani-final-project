@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'home_app',
     'counseling_app',
     'about_app',
+    'store_app',
     # installed libraries
     'django_ckeditor_5',
 

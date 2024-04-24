@@ -21,4 +21,4 @@ class IndexView(View):
             'company_attrs' : get_company_attributes(),
             'comapny_general_info' : get_company_info()
         }
-        return render(request, None, context)
+        return render(request, 'home_app/index.html', context)

@@ -27,11 +27,13 @@ class UserContactFormView(View):
     form_class = UserContactForm
     def get(self, request):
         form = self.form_class()
-        return render(request, None, {'form':form})
+        return render(request, 'counseling_app/counseling.html', {'form':form})
 
     def post(self, request):
         form = self.form_class(data=request.data)
         if form.is_valid():
             form.save()
             messages.success(request, 'فرم شما ثبت شد')
-            return redirect('/')
+            return redirect('index')
+        
+        return render(request, 'counseling_app/counseling.html', {'form':form})

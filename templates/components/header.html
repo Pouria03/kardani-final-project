@@ -1,0 +1,44 @@
+<header id="header">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand logo" href="{% url 'index' %}">لوگو</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="{% url 'store' %}" class="nav-link">فروشگاه</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'blog' %}">مقالات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"
+                         href="{% url 'about' %}">درباره ما</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#"
+                         role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            مشاوره
+                        </a>
+                        <ul class="dropdown-menu bg-dark">
+                            <li><a class="dropdown-item"
+                                 href="{% url 'counseling_detail' 1 %}">مشاوره اقتصادی</a></li>
+                            <li><a class="dropdown-item"
+                                 href="{% url 'counseling_detail' 1 %}">مشاوره مالی</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item"
+                                 href="{% url 'counseling_detail' 1 %}">مشاوره تحصیلی</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

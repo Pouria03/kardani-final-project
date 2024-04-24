@@ -10,6 +10,7 @@ urlpatterns = [
     path('blog/', include('blog_app.urls')),
     path('counseling/', include('counseling_app.urls')),
     path('about/', include('about_app.urls')),
+    path('store/', include('store_app.urls')),
 ]
 
 # ckeditor paths :
