@@ -3,6 +3,9 @@
 """
 
 from pathlib import Path
+from .ckeeditor_config import *
+import os
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
@@ -23,6 +26,9 @@ INSTALLED_APPS = [
     'home_app',
     'counseling_app',
     'about_app',
+    # installed libraries
+    'django_ckeditor_5',
+
 ]
 
 MIDDLEWARE = [
@@ -83,4 +89,8 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+# uploads
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
 

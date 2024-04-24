@@ -1,5 +1,5 @@
 from django.db import models
-
+from django_ckeditor_5.fields import CKEditor5Field
 
 
 # Create your models here.
@@ -9,8 +9,8 @@ class Counseling(models.Model):
         people can recieve from thsis website's owner 
     """
     title = models.CharField(max_length=75)
-    # TODO: add ckeditor to field below
-    description = models.TextField(max_length=3000)
+
+    description = CKEditor5Field(config_name='extends')
 
 
     def __str__(self):

@@ -10,7 +10,6 @@ class Contact(models.Model):
                             '  در صفحه مشاوره را ثبت کرده است'  
     )
     
-    # TODO: choose from counseling types
     counseling_type = models.OneToOneField(Counseling,
                                            on_delete=models.SET_NULL,
                                            null=True,
