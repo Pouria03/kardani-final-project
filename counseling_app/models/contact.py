@@ -1,5 +1,5 @@
 from django.db import models
-
+from counseling_app.models import Counseling
 
 
 
@@ -11,8 +11,10 @@ class Contact(models.Model):
     )
     
     # TODO: choose from counseling types
-    counseling_type = models.CharField(max_length=50,
-                                       verbose_name='نوع مشاوره درخواستی',
+    counseling_type = models.OneToOneField(Counseling,
+                                           on_delete=models.SET_NULL,
+                                           null=True,
+                                        verbose_name='نوع مشاوره درخواستی',
                                        help_text='نوع مشاوره ای که کاربر در فرمی'\
                                         ' که در صفحه مشاوره است ثبت کرده. '
     )
