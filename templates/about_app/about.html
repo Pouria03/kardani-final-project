@@ -5,18 +5,12 @@
 <!-- first section (top section) -->
 <section class="about-top-section">
     <div class="container">
-        <h2>درباره مرکز مشاوره اقتصادی دکتر فولاد</h2>
-        <p>
-            مجموعه‌ای در زمینه شناسایی ریسک‌های ژئوپلیتیک و مشاوره در مباحث اقتصادی و سرمایه‌گذاری است که ریسک‌ها را
-            ارزیابی و فرصت‌ها را برای سرمایه‌گذاران، سیاست‌گذاران و صاحبان کسب‌ و کارها به وجود می‌آورد. این مجموعه
-            فعالیت خود را از سال 1382 آغاز و اکنون نزدیک به دو دهه است که افتخار همکاری با ده‌ها شرکت ایرانی و
-            شخصیت‌های
-            حقیقی موفق را در کارنامه خود دارد. تیم مرکز مشاوره اقتصادی ایرانیان متشکل از کارشناسان امور اقتصادی،
-            مالی و
-            سرمایه‌گذاری، علوم سیاسی، ژئوپلیتیک، دیپلمات‌های سابق و کارشناسان منطقه‌ای هستند که در تلاش‌اند با
-            شناسایی و
-            ارزیابی ریسک‌ها، فرصت‌های اقتصادی و سرمایه‌گذاری مناسب برای مشتریان خود فراهم آورند.
+        <h2>درباره {{about_company.comapny_name}}  </h2>
+        <div class="ck-content">
+            <p>
+            {{about_company.description_about_company}}
         </p>
+        </div>
     </div>
 
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -31,48 +25,17 @@
     <div class="container">
         <h2>خدمات مرکز مشاوره</h2><br>
         <div class="services">
-            <div class="service-card">
-                <div class="service-card-icon">
-                    <!-- Your icon here -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                        class="bi bi-person-bounding-box" viewBox="0 0 16 16">
-                        <path
-                            d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5M.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5" />
-                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                    </svg>
-                </div>
-                <div class="service-card-text">
-                    مشاوره اقتصادی
-                </div>
+           {% for service in company_services %}
+           <div class="service-card">
+            <div class="service-card-icon">
+                <!-- Your icon here -->
+            {{service.icon_svg_code}}                
             </div>
-            <div class="service-card">
-                <div class="service-card-icon">
-                    <!-- Your icon here -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                        class="bi bi-person-bounding-box" viewBox="0 0 16 16">
-                        <path
-                            d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5M.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5" />
-                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                    </svg>
-                </div>
-                <div class="service-card-text">
-                    مشاوره اقتصادی
-                </div>
+            <div class="service-card-text">
+                {{service.service_title}}
             </div>
-            <div class="service-card">
-                <div class="service-card-icon">
-                    <!-- Your icon here -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                        class="bi bi-person-bounding-box" viewBox="0 0 16 16">
-                        <path
-                            d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5M.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5" />
-                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                    </svg>
-                </div>
-                <div class="service-card-text">
-                    مشاوره اقتصادی
-                </div>
-            </div>
+        </div>
+           {% endfor %}
         </div>
     </div>
 </section>
@@ -82,34 +45,13 @@
     <div class="container">
         <div class="about-boss row">
             <div class="col-md-5">
-                <img src="https://moshaverr.com/wp-content/uploads/2023/01/%D9%81%D8%B1%D8%B4%D8%A7%D8%AF-%D8%A8%D9%87%D8%A7%D8%A8%D8%A7%D8%AF%DB%8C-%D9%85%D8%B4%D8%A7%D9%88%D8%B1-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%DB%8C.jpg"
+                <img src="{{about_company.picture_about_boss.url}}"
                     alt="" class="img-fluid">
             </div>
-            <div class="col-md-6">
-                <h2>درباره دکتر</h2>
+            <div class="col-md-6 ck-content">
+                <h2>درباره {{about_company.boss_name}}</h2>
                 <p class="about-boss-desc">
-                    استراتژيست در زمینه ريسک های ژئوپلیتیک و مشاور اقتصادی و سرمایه گذاری است که در طول دوران
-                    حرفه اى خود،
-                    همواره افتخار همراهى و همكارى با بسيارى از صاحبان كسب و كار مشهور، موفق و صاحب ثروت را داشته
-                    است كه حاصل
-                    آن گنجينه اى از تجربيات ارزشمند اندوخته شده در طى ساليان می باشد.
-                    فرشاد بهابادی کارشناسی خود را در رشته حسابداری و کارشناسی ارشد و دکترا خود را در رشته
-                    ژئوپلیتیک به پایان
-                    رسانده و ده‌ها مقاله در زمینه‌های مختلف به‌ویژه در حوزه‌های کسب‌وکار، اقتصاد و ژئوپلیتیک
-                    منتشر کرده است.
-
-                    همچنین 3 کتاب: رضایت مشتری یعنی چه (سال 1385) راز پرواز نام‌های تجاری (1388) و رزفر (1393)
-                    را تاکنون
-                    تألیف نموده‌اند.
-                    دکتر فرشاد بهابادی پایه‌گذار دو جشنواره ملی: جشنواره قهرمانان صنعت ایران (1384) و جشنواره
-                    انتخاب یک‌صد
-                    برند برتر ایران (1390) است.
-                    همچنین ایشان پایه‌گذار مفهوم ارزش‌گذاری برند یا دارایی‌های نامشهود در اقتصاد و سیستم بانکی
-                    ایران هستند
-                    که ارزش‌گذاری دو برند استقلال و پرسپولیس را انجام داده‌اند.
-                    دکتر فرشاد بهابادی در حال حاضر به‌صورت حرفه‌ای خدمات مدیریت ریسک سنجی و مشاوره مالی، اقتصادی
-                    و
-                    سرمایه‌گذاری را در ایران، امارات، انگلستان و آلمان ارائه می‌نمایند.
+                   {{about_company.description_about_boss}}                    
                 </p>
             </div>
         </div>
@@ -121,67 +63,22 @@
     <div class="container">
         <h2>سوالات پرتکرار</h2><br>
         <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        پرسش نخست
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
-                        است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
-                        تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
-                        در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم
-                        افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان
-                        فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و
-                        شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات
-                        پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-                    </div>
+        {% for item in frequent_questions %}
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    {{item.question}}
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                   {{item.answer}}
                 </div>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        پرسش دوم
-                    </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
-                        است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
-                        تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
-                        در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم
-                        افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان
-                        فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و
-                        شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات
-                        پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        پرسش سوم
-                    </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
-                        است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
-                        تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
-                        در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم
-                        افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان
-                        فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و
-                        شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات
-                        پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. </div>
-                </div>
-            </div>
+        </div>
+        {% endfor %}
         </div>
     </div>
 </section>

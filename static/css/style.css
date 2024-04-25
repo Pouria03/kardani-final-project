@@ -324,6 +324,18 @@ footer .copy{
     color: var(--second-color);
 }
 
+.card:hover{
+    background-color: #fffafa !important;
+}
+
+.card .card-image{
+    transition: 0.5s all ease-in-out;
+}
+
+.card:hover .card-image{
+    transform: scale(1.1);
+}
+
 
 /* post-detail page */
 .post-detail-title,

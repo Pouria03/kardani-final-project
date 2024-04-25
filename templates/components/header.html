@@ -13,7 +13,7 @@
                         <a href="{% url 'store' %}" class="nav-link">فروشگاه</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'blog' %}">مقالات</a>
+                        <a class="nav-link" href="{% url 'blog' %}">مطالب</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page"
@@ -26,15 +26,16 @@
                             مشاوره
                         </a>
                         <ul class="dropdown-menu bg-dark">
-                            <li><a class="dropdown-item"
-                                 href="{% url 'counseling_detail' 1 %}">مشاوره اقتصادی</a></li>
-                            <li><a class="dropdown-item"
-                                 href="{% url 'counseling_detail' 1 %}">مشاوره مالی</a></li>
+                            {%for counsel_type in counseling_types %}
+                            <li>
+                                <a class="dropdown-item"
+                                 href="{% url 'counseling_detail' counsel_type.id %}">
+                                 {{counsel_type.title}}</a>
+                            </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item"
-                                 href="{% url 'counseling_detail' 1 %}">مشاوره تحصیلی</a></li>
+                            {% endfor %}
                         </ul>
                     </li>
                 </ul>

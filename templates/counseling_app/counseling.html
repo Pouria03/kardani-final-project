@@ -4,7 +4,7 @@
 
 <section class="counseling-title-section">
     <div class="container d-flex text-light justify-content-between align-items-center">
-        <h3>توضیحات کوتاه درباره این نوع مشاوره</h3>
+        <h3>{{counseling.title}}</h3>
         <div class="text-center p-1 rounded contact-display-btn">
             <div>تماس</div>
             <div>09282212290</st>
@@ -15,22 +15,7 @@
     <div class="container-fluid text-end m-auto">
         <div class="row justify-content-between">
             <div class="col-md-8 p-3 pt-0">
-                مشاوره راهبردی و تغییر سازمانی:
-
-                ما می‌توانیم به شرکت‌ها در تعیین راهبرد، تغییر فرهنگ سازمانی و بهبود عملکرد سازمانی کمک کنیم.
-                پیاده سازی سیستم مدیریت ثروت:
-
-                ما میتوانیم به سازمان ها برای ایجاد سود پایدار و دست یابی به ثروت واقعی کمک نماییم.
-                ارائه راهبردهای نوآورانه:
-
-                ما می‌توانیم به شرکت‌ها کمک کنیم تا راهبردهای نوآورانه ایجاد کنند که بهبود عملکرد، افزایش قدرت
-                رقابتی و توسعه فرصت‌های جدید را به همراه داشته باشند.
-                ارزیابی و بهبود فرآیندهای نوآوری:
-
-                ما می‌توانیم فرآیندهای نوآوری موجود در سازمان‌ها را مورد ارزیابی قرار داده و مشکلات و موانع را
-                شناسایی کنیم. سپس پیشنهاداتی برای بهبود فرآیندها ارائه دهیم.
-                توسعه صادرات محصولات: ما می‌توانیم به شرکت‌ها در ایجاد زمینه های صادرات محصولات و خدمات کمک
-                نماییم.
+                {{counseling.description}}
             </div>
             <div class="col-md-4 p-5 pt-2 pb-2">
                 <h5 class="text-center contact-form-title">درخواست تماس</h5>
@@ -58,4 +43,4 @@
     </div>
 </section>
 
-{% block main %}
+{% endblock main %}
