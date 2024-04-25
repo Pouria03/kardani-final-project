@@ -22,20 +22,6 @@ class AboutCompany(models.Model):
     def __str__(self):
         return self.comapny_name
     
-    def save(self, *args, **kwargs):
-        """
-            This method is responsible for 
-            saving new records for this model.
-            in this case, this method let admin
-            have the permission to add 
-            only one record for this model.
-        """
-        # Check if a record already exists
-        if self.__class__.objects.exists():
-            raise ValueError("A record with this email already exists.")
-        
-        # If not, proceed with saving the record
-        super().save(*args, **kwargs)
 
 
     class Meta:
