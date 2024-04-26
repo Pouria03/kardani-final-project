@@ -1,0 +1,30 @@
+<div class="col-md-4 p-5 pt-2 pb-2">
+    <h5 class="text-center contact-form-title">درخواست تماس</h5>
+    <form action="{% url 'contact_request' %}" method="post"
+     class="contact-form rounded text-light p-3">
+     {% csrf_token %}
+
+        <div class="mb-3">
+            <label for="name" class="form-label">نام</label>
+            <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="mb-3">
+            <label for="counseling-type" class="form-label">نوع مشاوره</label>
+            <select name="counseling_type" class="form-control" id="counseling-type">
+                <option value="" selected>...</option>
+                {% for counseling in counseling_types %}
+                    <option value="{{counseling.id}}">{{counseling.title}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">شماره تلفن</label>
+            <input type="text" class="form-control" id="phone" name="user_phone">
+        </div>
+        <input type="hidden" name="current_page_url_parameter"
+        value="{{counseling_id}}">
+
+        <button type="submit" class="btn">ثبت</button>
+        
+    </form>
+</div>

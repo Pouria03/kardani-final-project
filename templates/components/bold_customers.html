@@ -1,0 +1,14 @@
+<section class="bold-customers-section container-fluid">
+	<h2 class="section-title"><span class="section-title-first-word">برخی </span>از مشتریان ما </h2>
+	<div class="horizontal-customer-list">
+		<div class="horizontal-customer-list__inner">
+            {% for bold_customer in bold_customers %}
+			<div class="customer">
+				<img src="{{bold_customer.logo.url}}"
+                class="img-fluid"
+                alt="{{bold_customer.name}}">
+			</div>
+            {% endfor %}
+		</div>
+	</div>
+</section>

@@ -1,7 +1,6 @@
 from django.db import models
 
 
-
 class AboutCompany(models.Model):
     comapny_name = models.CharField(max_length=75,
                                     verbose_name='نام شرکت')
@@ -12,7 +11,8 @@ class AboutCompany(models.Model):
     boss_name = models.CharField(max_length=75,
                                  verbose_name='نام و نام خانوادگی رییس ')
     
-    description_about_boss = models.TextField(max_length=1500,
+    description_about_boss = models.TextField(
+                                             max_length=1500,
                                               verbose_name='درباره رییس شرکت')
 
     picture_about_boss = models.ImageField(upload_to='uploads/customer_logos/',

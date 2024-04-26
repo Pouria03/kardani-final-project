@@ -8,8 +8,7 @@ import os
 
 
 DEBUG = False
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['localhost']
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases

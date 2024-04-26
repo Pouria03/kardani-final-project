@@ -209,7 +209,9 @@ service-card-text {
 }
 
 .horizontal-customer-list .customer img{
-    max-width: 100%;
+    /* display: block; */
+    width: 250px;
+    height: 250px;
     text-align: center;
     margin: auto;
 }

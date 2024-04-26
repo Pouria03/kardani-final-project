@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.views import View
 from .services import (get_data_about_company,
-                       get_frequent_questions)
+                       get_frequent_questions,
+                       get_services)
 
 # Create your views here.
 class AboutCompanyView(View):
@@ -13,12 +14,10 @@ class AboutCompanyView(View):
         AboutCompany and FrequentQuestion
     """
     def get(self, request):
-        about_company = get_data_about_company()
-        frequent_questions = get_frequent_questions()
-
         context = {
-            'about_company' : about_company,
-            'frequent_questions' : frequent_questions
+            'about_company' : get_data_about_company(),
+            'frequent_questions' : get_frequent_questions(),
+            'company_services' : get_services()
         }
 
         return render(request, 'about_app/about.html', context)

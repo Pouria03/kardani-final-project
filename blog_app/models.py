@@ -1,5 +1,5 @@
 from django.db import models
-from django_ckeditor_5.fields import CKEditor5Field
+from ckeditor.fields import RichTextField
 
 
 
@@ -22,7 +22,7 @@ class Post(models.Model):
                             max_length=100,
                             help_text='نحوه نمایش عنوان مطلب در نوار ادرس مرورگر')
 
-    content = CKEditor5Field(config_name='extends',
+    content = RichTextField(
                             max_length=2500,
                             blank=False,
                             null=False,

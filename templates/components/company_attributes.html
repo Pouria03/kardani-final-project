@@ -1,0 +1,15 @@
+<section class="why-us-section container-fluid">
+	<h2 class="section-title"><span class="section-title-first-word">چرا </span>خدمات مرکز مشاوره ما؟</h2>
+	<div class="reasons">
+        {% for attr in attrs %}
+            <div class="reason-card">
+                <div class="reason-card-icon">
+                    <!-- icon here -->
+                    {{attr.icon_svg_code|safe}}
+                </div>
+                <div class="reason-card-text">
+                    {{attr.title}}
+                </div>
+            </div>
+        {% endfor %}
+</section>

@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.http import HttpRequest
 from home_app.models import (CompanyAttribute,
                              CompanyInfo,
                              CompanyService,
@@ -14,12 +15,13 @@ class CompanyInfoAdmin(admin.ModelAdmin):
     """
     list_display = ('email', 'tel')
 
-
     # if any object has been created in 'AbouCompany' model, remove 'add new' button from admin panel
     if CompanyInfo.objects.exists():
         def has_add_permission(self, request):
             return False
 
+    def has_delete_permission(self, request, obj=None) -> bool:
+        return False
 
 
 # Register your models here.

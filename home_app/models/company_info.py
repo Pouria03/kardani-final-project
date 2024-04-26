@@ -8,6 +8,10 @@ class CompanyInfo(models.Model):
         company to present it to its users and customers in 
         the website.
     """
+
+    company_name = models.CharField(max_length=100,
+                                    verbose_name='نام شرکت')
+
     email = models.EmailField(unique=True,
                               verbose_name="ایمیل شرکت")
     
@@ -38,18 +42,18 @@ class CompanyInfo(models.Model):
     def __str__(self) -> str:
         return self.email
 
-    def save(self, *args, **kwargs):
-        """
-            This method is responsible for saving new records.
-            in this case, this method let admin have the permission
-            to add only one record for this model.
-        """
-        # Check if a record already exists
-        if self.__class__.objects.exists():
-            raise ValueError("A record with this email already exists.")
+    # def save(self, *args, **kwargs):
+    #     """
+    #         This method is responsible for saving new records.
+    #         in this case, this method let admin have the permission
+    #         to add only one record for this model.
+    #     """
+    #     # Check if a record already exists
+    #     if self.__class__.objects.exists():
+    #         raise ValueError("A record with this email already exists.")
         
-        # If not, proceed with saving the record
-        super().save(*args, **kwargs)
+    #     # If not, proceed with saving the record
+    #     super().save(*args, **kwargs)
 
 
     class Meta:

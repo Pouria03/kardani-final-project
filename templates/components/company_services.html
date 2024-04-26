@@ -1,0 +1,16 @@
+<section class="services-section container-fluid">
+    <h2 class="section-title"><span class="section-title-first-word">خدمات</span> ویژه مشاوره اقتصادی</h2>
+    <div class="services">
+        {% for service in services %}
+        <div class="service-card">
+            <div class="service-card-icon">
+                <!-- Your icon here -->
+                {{ service.icon_svg_code|safe }}
+            </div>
+            <div class="service-card-text">
+                {{service.service_title}}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>

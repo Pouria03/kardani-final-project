@@ -49,6 +49,8 @@ CKEDITOR_5_CONFIGS = {
             'bulletedList', 'numberedList',
             '|',
             'blockQuote',
+            '|',
+            'textAlign',
         ],
         'toolbar': ['heading', '|', 'outdent', 'indent', '|', 'bold', 'italic', 'link', 'underline', 'strikethrough',
         'code','subscript', 'superscript', 'highlight', '|', 'codeBlock', 'sourceEditing', 'insertImage',

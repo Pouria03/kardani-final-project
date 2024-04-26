@@ -11,9 +11,12 @@ urlpatterns = [
     path('counseling/', include('counseling_app.urls')),
     path('about/', include('about_app.urls')),
     path('store/', include('store_app.urls')),
+    # ckeditor
+    path('ckeditor/', include('ckeditor_uploader.urls')),
+
+
 ]
 
-# ckeditor paths :
-urlpatterns += [
-    path("ckeditor5/", include('django_ckeditor_5.urls'), name="ck_editor_5_upload_file"),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

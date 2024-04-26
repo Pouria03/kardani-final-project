@@ -1,5 +1,5 @@
 from about_app.models import FrequentQuestion, AboutCompany
-
+from home_app.models import CompanyService
 
 def get_data_about_company():
     """
@@ -25,3 +25,7 @@ def get_frequent_questions():
     """
 
     return FrequentQuestion.objects.all()
+
+
+def get_services():
+    return CompanyService.objects.all()

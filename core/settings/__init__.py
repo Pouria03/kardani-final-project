@@ -1,5 +1,4 @@
 from .base import *
-from .ckeeditor_config import *
 
 try :
     from .local import *

@@ -3,7 +3,7 @@
 """
 
 from pathlib import Path
-from .ckeeditor_config import *
+
 import os
 
 
@@ -27,8 +27,9 @@ INSTALLED_APPS = [
     'counseling_app',
     'about_app',
     'store_app',
-    # installed libraries
-    'django_ckeditor_5',
+    # third party libraries
+    'ckeditor',
+    'ckeditor_uploader',
 
 ]
 
@@ -57,7 +58,10 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'counseling_app.context_processors.counseling_types',
+                # proj's custom context processors:
+                'home_app.context_processors.company_info',
             ],
+
         },
     },
 ]
@@ -78,7 +82,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-
 BASE_DOMAIN = "http://127.0.0.1:8000"
 
 
@@ -92,7 +95,14 @@ USE_I18N = True
 
 USE_TZ = True
 
+
+STATIC_URL = 'static/'
+
+
 # uploads
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
 
+
+# ckeditor
+CKEDITOR_UPLOAD_PATH = "uploads/"

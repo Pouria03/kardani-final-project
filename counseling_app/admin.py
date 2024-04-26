@@ -11,8 +11,8 @@ class ContactAdmin(admin.ModelAdmin):
         contacts that people made
         from contact form in counseling web page.
     """
-    list_display = ('name', 'counseling_type', 'user_phone', 'created_at')
-    search_fields = ('name', 'counseling_type', 'user_phone')
+    list_display = ('name', 'user_phone', 'created_at', 'counseling_type')
+    search_fields = ('name', 'user_phone')
     list_filter = ('created_at', 'counseling_type')
 
 

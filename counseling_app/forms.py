@@ -2,7 +2,7 @@ from django.forms import ModelForm
 from .models import Contact
 
 class UserContactForm(ModelForm):
-    class meta:
+    class Meta:
         model = Contact
-        fields = '__all__'
+        fields = ['name', 'counseling_type', 'user_phone']
         read_only_fields = ('created_at', )

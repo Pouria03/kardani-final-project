@@ -16,7 +16,6 @@
                         <h5 class="card-title text-end">{{post.title}}</h5>
                     </a>
                     <p class="card-text text-end text-muted">
-                        {{post.content|truncatewords:8}}
                         <br>
                         <small class="text-muted text-end">{{post.created_at}}</small>
                     </p>
@@ -24,25 +23,45 @@
             </div>
             {% endfor %}
         </div>
-        <div class="pagination-container d-flex justify-content-center mt-5">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+        <!-- pagination --><div class="pagination-container d-flex justify-content-center mt-5">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            {% if posts.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ posts.previous_page_number }}" aria-label="Previous">
+                        <span aria-hidden="true">«</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <span class="page-link" aria-hidden="true">«</span>
+                </li>
+            {% endif %}
+
+            {% for page in posts.paginator.page_range %}
+                {% if page == posts.number %}
+                    <li class="page-item active"><a class="page-link" href="#">{{ page }}</a></li>
+                {% else %}
+                    <li class="page-item"><a class="page-link" href="?page={{ page }}">{{ page }}</a></li>
+                {% endif %}
+            {% endfor %}
+
+            {% if posts.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ posts.next_page_number }}" aria-label="Next">
+                        <span aria-hidden="true">»</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <span class="page-link" aria-hidden="true">»</span>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+        <!-- end pagination -->
+        
     </div>
 </section>
 {% endblock main %}

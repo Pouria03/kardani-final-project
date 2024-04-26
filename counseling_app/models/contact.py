@@ -10,11 +10,11 @@ class Contact(models.Model):
                             '  در صفحه مشاوره را ثبت کرده است'  
     )
     
-    counseling_type = models.OneToOneField(Counseling,
-                                           on_delete=models.SET_NULL,
-                                           null=True,
+    counseling_type = models.ForeignKey(Counseling,
+                                        on_delete=models.SET_NULL,
+                                        null=True,
                                         verbose_name='نوع مشاوره درخواستی',
-                                       help_text='نوع مشاوره ای که کاربر در فرمی'\
+                                        help_text='نوع مشاوره ای که کاربر در فرمی'\
                                         ' که در صفحه مشاوره است ثبت کرده. '
     )
 
@@ -25,7 +25,7 @@ class Contact(models.Model):
                                       verbose_name='تاریخ ثبت فرم درخواست')
 
     def __str__(self) -> str:
-        return self.name + ' - ' + self.counseling_type
+        return self.name + ' - ' + self.counseling_type.title
     
     class Meta:
         verbose_name = ' فرم ثبت درخواست های کاربر'

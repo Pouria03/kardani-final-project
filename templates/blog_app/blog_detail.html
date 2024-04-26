@@ -8,16 +8,19 @@
 </section>
 <section class="post-content-section" >
     <div class="container" id="post-content">
-        {{post.content}}
+        {{post.content|safe}}
     </div>
     <div class="d-flex justify-content-around container mt-5">
-        <a href="" class="p-2 text-decoration-none"> &blacktriangleright; بعدی
-            <h5>مقاله شماره ۳</h5>
+        <a href="{% url 'blog_detail' post.id|add:'1' %}" class="p-2 text-decoration-none"> &blacktriangleright; بعدی
+            <h5>مقاله شماره {{post.id|add:"1"}}</h5>
         </a>
         
-        <a href="" class="p-2 text-decoration-none">قبلی &blacktriangleleft;
+        {% if post.id > 1 %}
+        <a href="{% url 'blog_detail' post.id|add:'-1' %}" class="p-2 text-decoration-none">قبلی &blacktriangleleft;
             <h5>مقاله شماره ۱</h5>
         </a>
+        {% endif %}
+
     </div>
 </section>
 {% endblock main %}
