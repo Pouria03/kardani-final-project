@@ -316,6 +316,8 @@ footer .copy{
 /* blog page */
 .posts-section .container .card{
     background-color: #fff;
+    transition: all .5s;
+    border-radius: 20px;
 }
 
 .posts-section .container .card .card-text{
@@ -326,6 +328,7 @@ footer .copy{
     color: var(--second-color);
 }
 
+
 .card:hover{
     background-color: #fffafa !important;
 }
@@ -334,9 +337,9 @@ footer .copy{
     transition: 0.5s all ease-in-out;
 }
 
-.card:hover .card-image{
+/* .card:hover .card-image{
     transform: scale(1.1);
-}
+} */
 
 
 /* post-detail page */
@@ -370,12 +373,18 @@ footer .copy{
     margin-top: 20px;
 }
 
-#post-content h1,
-#post-content h2,
-#post-content h3{
+.post-content h1,
+.post-content h2,
+.post-content h3{
     margin-top: 20px;
 }
 
+.post-content img{
+    max-width: 100%;
+    margin: auto;
+    display: block;
+    text-align: center;
+}
 
 
 /* query media */
