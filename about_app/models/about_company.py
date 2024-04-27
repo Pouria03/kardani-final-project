@@ -19,6 +19,25 @@ class AboutCompany(models.Model):
                                            verbose_name='تصویر مالک یا رییس شرکت')
     
 
+    email = models.EmailField(unique=True,
+                              verbose_name="ایمیل شرکت")
+    
+    phone = models.CharField(max_length=11,
+                              verbose_name="موبایل شرکت")
+    
+    tel = models.CharField(max_length=11,
+                            verbose_name="تلفن شرکت")
+    
+    office_addres = models.CharField(max_length=500,
+                                      verbose_name="ادرس محل دفتر")
+    
+    instagram = models.CharField(verbose_name='نام کاربری اکانت اینستاگرام',
+                                 max_length=50)
+    
+    telegram = models.CharField(verbose_name='آی دی کانال یا چت تلگرام',
+                                max_length=50)
+    
+
     def __str__(self):
         return self.comapny_name
     

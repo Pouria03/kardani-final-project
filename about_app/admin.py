@@ -18,7 +18,7 @@ class AboutCompanyAdmin(admin.ModelAdmin):
     list_display = ('comapny_name', )
 
 
-    # if any object has been created in 'AbouCompany' model, remove 'add new' button from admin panel
+#     # if any object has been created in 'AbouCompany' model, remove 'add new' button from admin panel
     if AboutCompany.objects.exists():
         def has_add_permission(self, request):
             return False
@@ -29,7 +29,7 @@ class AboutCompanyAdmin(admin.ModelAdmin):
     
 
 
-# Register your models here.
+# # Register your models here.
 admin.site.register(FrequentQuestion,
                      FrequentQuestionAdmin)
 

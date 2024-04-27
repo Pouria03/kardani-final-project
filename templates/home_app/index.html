@@ -6,10 +6,10 @@
 <section class="intro-section container-fluid">
 	<div class="intro-text">
 		<h1 class="home-intro-title">
-			{{company_info.company_name}}
+			{{intro_data.intro_title}}
 		</h1>
 		<p class="the-intro-desc">
-			{{company_info.about_company}}
+			{{intro_data.intro_text}}
 		</p>
 		<div>
 			<a class="btn" href="{% url 'counseling_detail' 1 %}">مشاوره</a>
@@ -18,7 +18,7 @@
 	</div>
 	<div class="intro-video">
 		<video controls>
-			<source src="{{company_info.intro_video.url}}" type="video/mp4">
+			<source src="{{intro_data.intro_video.url}}" type="video/mp4">
 		</video>
 	</div>
 </section>

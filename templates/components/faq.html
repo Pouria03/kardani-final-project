@@ -1,0 +1,28 @@
+<section class="faq">
+    <div class="container">
+        <h2>سوالات پرتکرار</h2><br>
+        <div class="accordion" id="accordionExample">
+        {% for item in frequent_questions %}
+        <div class="accordion-item">
+            <h2 class="accordion-header " id="heading{{ forloop.counter }}">
+                <button class="accordion-button collapsed"
+                 type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse{{ forloop.counter }}"
+                    aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+                    aria-controls="collapse{{ forloop.counter }}">
+                    {{item.question}}
+                </button>
+            </h2>
+            <div id="collapse{{ forloop.counter }}"
+             class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" 
+             aria-labelledby="heading{{ forloop.counter }}"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body bg-dark text-light">
+                   {{item.answer}}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+</section>

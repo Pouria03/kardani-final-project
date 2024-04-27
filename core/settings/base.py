@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'counseling_app',
     'about_app',
     'store_app',
+    'utils_app',
     # third party libraries
     'ckeditor',
     'ckeditor_uploader',
@@ -59,7 +60,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'counseling_app.context_processors.counseling_types',
                 # proj's custom context processors:
-                'home_app.context_processors.company_info',
+                'utils_app.context_processors.company_info',
             ],
 
         },

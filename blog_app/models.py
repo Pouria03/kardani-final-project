@@ -23,7 +23,6 @@ class Post(models.Model):
                             help_text='نحوه نمایش عنوان مطلب در نوار ادرس مرورگر')
 
     content = RichTextField(
-                            max_length=2500,
                             blank=False,
                             null=False,
                             verbose_name='متن مطلب')

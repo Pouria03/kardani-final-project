@@ -8,7 +8,7 @@ from django.shortcuts import get_object_or_404
 
 
 def get_all_posts():
-    return Post.objects.all()
+    return Post.objects.all().only('title', 'thumbnail', 'created_at')
 
 
 def get_post(id):

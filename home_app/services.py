@@ -1,5 +1,5 @@
 from home_app.models import (CompanyAttribute,
-                             CompanyInfo,
+                             IndexPage,
                              CompanyService,
                              BoldCustomer)
 
@@ -13,11 +13,13 @@ def get_all_bold_customers():
     return BoldCustomer.objects.all()
 
 
-def get_company_info():
+def get_index_page_data():
     try:
-        return CompanyInfo.objects.first()
-    except :
-        raise ValueError('object not found')
+        return IndexPage.objects.first()
+    except IndexPage.DoesNotExist:
+        return None
+    
+    
     
 
 def get_company_attributes():

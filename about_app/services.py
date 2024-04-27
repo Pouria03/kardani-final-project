@@ -1,20 +1,18 @@
 from about_app.models import FrequentQuestion, AboutCompany
 from home_app.models import CompanyService
 
+
 def get_data_about_company():
     """
         This method is responsible for
         getting data and return it 
         for about.html page
     """
-    data = None
     try:
-        data = AboutCompany.objects.first()
+        return AboutCompany.objects.first()
     except AboutCompany.DoesNotExist:
-        raise ValueError('object not found')
+        return None
     
-    return data
-
 
 def get_frequent_questions():
     """
