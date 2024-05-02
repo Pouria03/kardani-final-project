@@ -35,13 +35,14 @@ This project is a web application representing a personal branding which is abou
 
 
 ## Entities
-* Service ==fields==>(title, icon)
-* FAQ ==fields==>(question,answer)
-* ContactInfo ==fields==> (email, phone, address, socialmedia)
-* About ==fields==> (title, description)
-* Post ==fields==> (title, content, created_at, thumbnail)
-* Counseling ==fields==> (title, description)
-* ContactForm ==fields==> (name, phone)
+* CompanyService ==fields==>(id, title, icon)
+* FrequentQuestion ==fields==>(id, question,answer)
+* AboutCompany ==fields==> (id, title, description,company_name, email, address, social_accounts)
+* Post ==fields==> (id, title, content, created_at, thumbnail)
+* Counseling ==fields==> (id, title, description)
+* ContactForm ==fields==> (id, name, phone, counseling_type)
+* IndexPage ===fields==> (id, intro_text, intro_title, intro_video)
+
 
 
 ## Tests
@@ -49,14 +50,11 @@ This project is a web application representing a personal branding which is abou
 * testing views
 * testing forms
 
-
 ## Dockerizing project
 make project isolated and dockerized using docker techology
 
-
 ## Deployment
 creating acount on pythonanywhere domain and deploying project on the host.
-
 
 ## Project structure
 --core
