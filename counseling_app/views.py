@@ -32,11 +32,11 @@ class UserContactFormView(View):
         form = request.POST
         name=form.get('name')
         phone=form.get('user_phone')
-        counseling_type=form.get('counseling_type')
-        if name and phone and counseling_type:
+        counseling_type_id=form.get('counseling_type_id')
+        if name and phone and counseling_type_id:
             obj = submit_user_contact_request(name=name,
                                             user_phone=phone,
-                                            counseling_type=counseling_type)
+                                            counseling_type_id=counseling_type_id)
             if obj != None:
                 messages.success(request, 'فرم شما ثبت شد', extra_tags='success')
                 return redirect('counseling_detail', form.get('current_page_url_parameter'))

@@ -20,7 +20,8 @@ def get_counseling(id: int):
     
 
 def submit_user_contact_request(**kwargs):
-    counsling_type_id = int(kwargs['counseling_type'])
+    counsling_type_id = int(kwargs['counseling_type_id'])
+    
     return Contact.objects.create(name=kwargs['name'],
                                   user_phone=kwargs['user_phone'],
                                   counseling_type=get_counseling(id=counsling_type_id))

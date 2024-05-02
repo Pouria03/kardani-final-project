@@ -15,15 +15,8 @@ class Post(models.Model):
                             blank=False,
                             null=False,
                             verbose_name='عنوان')
-    
-    slug = models.SlugField(unique=True,
-                            blank=False,
-                            null=False,
-                            max_length=100,
-                            help_text='نحوه نمایش عنوان مطلب در نوار ادرس مرورگر')
 
-    content = RichTextField(
-                            blank=False,
+    content = RichTextField(blank=False,
                             null=False,
                             verbose_name='متن مطلب')
     
@@ -42,3 +35,4 @@ class Post(models.Model):
     class Meta:
         verbose_name = 'مطلب'
         verbose_name_plural = 'مطالب'
+        ordering = ['-id']

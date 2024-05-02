@@ -10,7 +10,7 @@
         </div>
         <div class="mb-3">
             <label for="counseling-type" class="form-label">نوع مشاوره</label>
-            <select name="counseling_type" class="form-control" id="counseling-type">
+            <select name="counseling_type_id" class="form-control" id="counseling-type">
                 <option value="" selected>...</option>
                 {% for counseling in counseling_types %}
                     <option value="{{counseling.id}}">{{counseling.title}}</option>
