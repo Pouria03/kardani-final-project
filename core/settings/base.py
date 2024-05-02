@@ -5,14 +5,14 @@
 from pathlib import Path
 
 import os
-
+from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-u8zf!$c2f1xp7acbkbhj7f$sit_kiz%7#b0-zn022m@)273)u#'
-
+load_dotenv()
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
