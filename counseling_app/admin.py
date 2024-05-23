@@ -22,7 +22,7 @@ class CounselingAdmin(admin.ModelAdmin):
         modyfing admin panel of
         counsel and mentoring services.
     """
-    list_display = ('title', 'description')
+    list_display = ('title',)
     search_fields = ('title', 'description')
 
 
