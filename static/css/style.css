@@ -347,6 +347,16 @@ footer .copy{
     /* min-height: 50vh; */
 }
 
+/* uploaded images from editor in admin panel */
+.counseling-section img{
+    display :block;
+    max-width :350px;
+    max-height : 300px;
+    border-radius : 15px;
+    margin:auto;
+    text-align:center;
+}
+
 .contact-form{
     background-color: var(--second-color);
 }
