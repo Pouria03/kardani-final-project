@@ -4,7 +4,6 @@ from django.db import models
 
 class FrequentQuestion(models.Model):
     question = models.TextField(max_length=500,
-                                unique=True,
                                 verbose_name='پرسش')
     
     answer = models.TextField(max_length=1500,
