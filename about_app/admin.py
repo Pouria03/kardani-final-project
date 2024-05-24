@@ -17,16 +17,16 @@ class AboutCompanyAdmin(admin.ModelAdmin):
     """
     list_display = ('comapny_name', )
 
-
-#     # if any object has been created in 'AbouCompany' model, remove 'add new' button from admin panel
-    if AboutCompany.objects.exists():
-        def has_add_permission(self, request):
-            return False
-        
-    def has_delete_permission(self, request, obj=None) -> bool:
-        return False
-
-    
+    try:
+        # if any object has been created in 'AbouCompany' model, remove 'add new' button from admin panel
+        if AboutCompany.objects.exists():
+            def has_add_permission(self, request):
+                return False
+        else:
+            def has_delete_permission(self, request, obj=None) -> bool:
+                return False
+    except:
+        pass
 
 
 # # Register your models here.
