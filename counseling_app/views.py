@@ -14,7 +14,7 @@ class CounselingDetailView(View):
         if not found raise 404
     """
 
-    def get(self, request, id):
+    def get(self, request, id : int):
         counseling = get_counseling(id)
         counseling_types = get_all_counselings()
         return render(request, 'counseling_app/counseling.html',
@@ -30,9 +30,9 @@ class UserContactFormView(View):
     """
     def post(self, request):
         form = request.POST
-        name=form.get('name')
-        phone=form.get('user_phone')
-        counseling_type_id=form.get('counseling_type_id')
+        name = form.get('name')
+        phone = form.get('user_phone')
+        counseling_type_id = form.get('counseling_type_id')
         if name and phone and counseling_type_id:
             obj = submit_user_contact_request(name=name,
                                             user_phone=phone,

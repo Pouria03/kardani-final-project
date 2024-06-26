@@ -3,10 +3,6 @@ from ckeditor.fields import RichTextField
 
 
 
-
-class PostManager(models.Manager):
-    ... 
-
 class Post(models.Model):
     """
         This model represents table of blog application.

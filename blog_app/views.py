@@ -9,8 +9,11 @@ from django.core.paginator import (Paginator,
                                 PageNotAnInteger)
 
 
-# Create your views here.
 class PostListView(View):
+    """This class based view
+    returns the list of posts
+    in each request.
+    """
     def get(self, request):
         posts = get_all_posts()
         paginator = Paginator(posts, 6) # 10 posts per page
@@ -25,7 +28,12 @@ class PostListView(View):
         return render(request, 'blog_app/blog.html',
                        {'posts': posts})
     
+
 class PostSearchView(View):
+    """This class based view
+    has one get method and returns 
+    the result of search in Post objects
+    """
     def get(self, request):
         q = request.GET.get('search-input')
         posts = search_in_posts(q)
@@ -33,8 +41,14 @@ class PostSearchView(View):
         return render(request, 'blog_app/blog_search_result.html',
                       {'posts':posts, 'posts_count': posts_count})
 
+
 class PostDetailView(View):
-    def get(self, request, id):
+    """This class based view
+    has a get method and takes
+    id as its only arguement and
+    returns one Post object if exists.
+    """
+    def get(self, request, id: int):
         post = get_post(id)
         if post is None:
             raise ValueError('404')

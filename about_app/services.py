@@ -1,8 +1,13 @@
+"""
+    services.py is here to seperate
+    business logic from views and models.
+"""
+
 from about_app.models import FrequentQuestion, AboutCompany
 from home_app.models import CompanyService
 
 
-def get_data_about_company():
+def get_data_about_company() -> AboutCompany | None:
     """
         This method is responsible for
         getting data and return it 
@@ -14,7 +19,7 @@ def get_data_about_company():
         return None
     
 
-def get_frequent_questions():
+def get_frequent_questions() -> list[FrequentQuestion]:
     """
         This method is responsible to get
         frequent asked questions and their
@@ -25,5 +30,5 @@ def get_frequent_questions():
     return FrequentQuestion.objects.all()
 
 
-def get_services():
+def get_services() -> list[CompanyService]:
     return CompanyService.objects.all()
