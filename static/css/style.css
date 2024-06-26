@@ -318,6 +318,13 @@ footer .copy{
     border-radius: 20px;
 }
 
+.search-input{
+    border: none;
+    background-color: rgb(235, 218, 218);
+    border-radius: 5px;
+    padding: 4px;
+}
+
 .posts-section .container .card .card-text{
     color: rgb(34, 34, 34) !important;
 }

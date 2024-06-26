@@ -3,6 +3,13 @@
 
 {% block main %}
 <section class="posts-section">
+    <div class="search-container text-center">
+        <form action="{% url 'search' %}">
+            <input type="text" class="search-input" name="search-input"
+            placeholder="واژه مورد نظر را وارد کنید...">
+            <button class="btn btn-sm text-dark">جستجو</button>
+        </form>
+    </div><br>
     <h2 class="text-center">مطالب</h2>
     <div class="container pb-5 pt-5">
         <div class="row row-cols-3 text-center m-auto gap-3 justify-content-center">
