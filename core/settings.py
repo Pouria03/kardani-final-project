@@ -1,7 +1,3 @@
-"""
-    This is the base settings for both local and production
-"""
-
 from pathlib import Path
 
 import os
@@ -97,6 +93,28 @@ USE_I18N = True
 
 USE_TZ = True
 
+DEBUG = False
+ALLOWED_HOSTS = ['*', ]
+
+# Database
+# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': f'django.db.backends.{os.getenv('BACKEND_DB', 'mysql')}',
+        'NAME': os.getenv('BACKEND_DB_NAME', 'name'),
+        'HOST': os.getenv('BACKEND_DB_HOST', 'host'),
+        'USER': os.getenv('BACKEND_DB_USER', 'user'),
+        'PASSWORD': os.getenv('BACKEND_DB_PASS', 'password'),
+        'PORT': os.getenv('BACKEND_DB_PORT', '5432')
+    }
+}
+
+
+
+# django static root path
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATIC_URL = 'static/'
 
@@ -107,3 +125,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
 
 # ckeditor
 CKEDITOR_UPLOAD_PATH = "uploads/"
+
+if DEBUG:
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, 'static'),
+    )
+
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
