@@ -102,7 +102,7 @@ ALLOWED_HOSTS = ['*', ]
 
 DATABASES = {
     'default': {
-        'ENGINE': f'django.db.backends.{os.getenv('BACKEND_DB', 'mysql')}',
+        'ENGINE': f'django.db.backends.postgresql',
         'NAME': os.getenv('BACKEND_DB_NAME', 'name'),
         'HOST': os.getenv('BACKEND_DB_HOST', 'host'),
         'USER': os.getenv('BACKEND_DB_USER', 'user'),
