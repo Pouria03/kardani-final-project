@@ -9,14 +9,14 @@ from django.shortcuts import get_object_or_404
 import re
 
 
-def get_all_counselings() -> list[Counseling]:
+def get_all_counselings() -> list[object]:
     """
         This method gets all counselings' title
         to display them in header of website.
     """
     return Counseling.objects.all().only('title')
 
-def get_counseling(id: int) -> Counseling:
+def get_counseling(id: int) -> object:
     """
         This method gets a counseling object by id.
         and checks if its found or not.
@@ -30,7 +30,7 @@ def is_phone_number(phone: str) -> True | False:
     if check_phone_regex:
         return True
 
-def submit_user_contact_request(**kwargs) -> Contact | None:
+def submit_user_contact_request(**kwargs) -> object | None:
     counsling_type_id : int = int(kwargs['counseling_type_id'])
     if is_phone_number(kwargs['user_phone']):
         return Contact.objects.create(name=kwargs['name'],
