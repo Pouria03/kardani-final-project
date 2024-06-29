@@ -7,7 +7,7 @@ from about_app.models import FrequentQuestion, AboutCompany
 from home_app.models import CompanyService
 
 
-def get_data_about_company() -> AboutCompany | None:
+def get_data_about_company():
     """
         This method is responsible for
         getting data and return it 
@@ -19,7 +19,7 @@ def get_data_about_company() -> AboutCompany | None:
         return None
     
 
-def get_frequent_questions() -> list[FrequentQuestion]:
+def get_frequent_questions() -> list:
     """
         This method is responsible to get
         frequent asked questions and their
@@ -30,5 +30,5 @@ def get_frequent_questions() -> list[FrequentQuestion]:
     return FrequentQuestion.objects.all()
 
 
-def get_services() -> list[CompanyService]:
+def get_services() -> list:
     return CompanyService.objects.all()

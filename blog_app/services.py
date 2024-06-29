@@ -24,7 +24,7 @@ def get_post(id: int) -> Post:
     return get_object_or_404(Post, id=id)
     
 
-def search_in_posts(q: str) -> list[Post]:
+def search_in_posts(q: str) -> list:
     """This function
     takes q as its argument 
     and returns a filtered list of Post objects.
