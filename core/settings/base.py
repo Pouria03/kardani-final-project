@@ -11,7 +11,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-u8zf!$c2f1xp7acbkbhj7f$sit_kiz%7#b0-zn022m@)273)u#'
+SECRET_KEY = os.getenv("SECRET_KEY",
+                        'django-insecure-u8zf!$c2f1xp7acbkbhj7f$sit_kiz%7#b0-zn022m@)273)u#')
 
 
 INSTALLED_APPS = [
@@ -82,7 +83,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-BASE_DOMAIN = "http://127.0.0.1:8000"
+BASE_DOMAIN = os.getenv("BASE_DOMAIN",
+                        "localhost")
 
 
 # Internationalization
@@ -97,7 +99,6 @@ USE_TZ = True
 
 
 STATIC_URL = 'static/'
-
 
 # uploads
 MEDIA_URL = '/media/'

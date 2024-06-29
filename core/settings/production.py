@@ -16,11 +16,12 @@ ALLOWED_HOSTS = ['*', ]
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mysql',
-        'HOST': 'mysql',
-        'USER': 'mysql',
-        'PASSWORD': 'mysql',
+        'ENGINE': f'django.db.backends.{os.getenv('BACKEND_DB', 'mysql')}',
+        'NAME': os.getenv('BACKEND_DB_NAME', 'name'),
+        'HOST': os.getenv('BACKEND_DB_HOST', 'host'),
+        'USER': os.getenv('BACKEND_DB_USER', 'user'),
+        'PASSWORD': os.getenv('BACKEND_DB_PASS', 'password'),
+        'PORT': os.getenv('BACKEND_DB_PORT', '5432')
     }
 }
 
