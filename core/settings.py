@@ -127,13 +127,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # ckeditor
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
-if DEBUG:
-    STATICFILES_DIRS = (
-        # for local machine dubugging :
-        (os.path.join(BASE_DIR, 'static')),
+# if DEBUG:
+#     STATICFILES_DIRS = (
+#         # for local machine dubugging :
+#         (os.path.join(BASE_DIR, 'static')),
 
-    )
-    STATIC_ROOT = '/static'
+#     )
+#     STATIC_ROOT = '/static'
 
 
 # Default primary key field type

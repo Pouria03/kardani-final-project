@@ -2,7 +2,7 @@
 # CKEDITOR_UPLOAD_PATH = Path.joinpath(BASE_DIR, "/uploads/ckeditor/") 
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 customColorPalette = [
