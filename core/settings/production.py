@@ -24,6 +24,7 @@ DATABASES = {
     }
 }
 
+WSGI_APPLICATION = "core.wsgi.application"
 
 
 # django static root path
