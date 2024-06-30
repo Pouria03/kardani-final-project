@@ -1,16 +1,16 @@
 from pathlib import Path
-from dotenv import load_dotenv, dotenv_values 
+from dotenv import load_dotenv, dotenv_values
 import os
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-load_dotenv() 
+load_dotenv()
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("SECRET_KEY",
-        default='django-insecure-u8zf!$c2f1xp7acbkbhj7f$sit_kiz%7#b0-zn022m@)273)u#')
+                       default='django-insecure-u8zf!$c2f1xp7acbkbhj7f$sit_kiz%7#b0-zn022m@)273)u#')
 
 
 INSTALLED_APPS = [
@@ -46,7 +46,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'core.urls'
 WSGI_APPLICATION = "core.wsgi.application"
-
 
 
 TEMPLATES = [
@@ -105,25 +104,16 @@ ALLOWED_HOSTS = ['*', ]
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-if not DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': f'django.db.backends.postgresql',
-            'NAME': os.getenv('BACKEND_DB_NAME', default='name'),
-            'HOST': os.getenv('BACKEND_DB_HOST', default='host'),
-            'USER': os.getenv('BACKEND_DB_USER', default='user'),
-            'PASSWORD': os.getenv('BACKEND_DB_PASS', default='password'),
-            'PORT': os.getenv('BACKEND_DB_PORT', default=5432)
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': f'django.db.backends.postgresql',
+        'NAME': os.getenv('BACKEND_DB_NAME', default='name'),
+        'HOST': os.getenv('BACKEND_DB_HOST', default='host'),
+        'USER': os.getenv('BACKEND_DB_USER', default='user'),
+        'PASSWORD': os.getenv('BACKEND_DB_PASS', default='password'),
+        'PORT': os.getenv('BACKEND_DB_PORT', default=5432)
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
-
+}
 
 
 STATIC_URL = '/static/'
@@ -139,14 +129,11 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 
 if DEBUG:
     STATICFILES_DIRS = (
-            # for local machine dubugging :        
-            (os.path.join(BASE_DIR, 'static')),
+        # for local machine dubugging :
+        (os.path.join(BASE_DIR, 'static')),
 
-        )
+    )
     STATIC_ROOT = '/static'
-    
-    
-
 
 
 # Default primary key field type
@@ -156,23 +143,23 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # storages
 STORAGES = {
-  "default": {
-      "BACKEND": "storages.backends.s3.S3Storage",
-  },
-  "staticfiles": {
-      "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
-  },
+    "default": {
+        "BACKEND": "storages.backends.s3.S3Storage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
 }
 
 # S3 Settings
-LIARA_ENDPOINT    = os.getenv("LIARA_ENDPOINT")
+LIARA_ENDPOINT = os.getenv("LIARA_ENDPOINT")
 LIARA_BUCKET_NAME = os.getenv("LIARA_BUCKET_NAME")
-LIARA_ACCESS_KEY  = os.getenv("LIARA_ACCESS_KEY")
-LIARA_SECRET_KEY  = os.getenv("LIARA_SECRET_KEY")
+LIARA_ACCESS_KEY = os.getenv("LIARA_ACCESS_KEY")
+LIARA_SECRET_KEY = os.getenv("LIARA_SECRET_KEY")
 
 # S3 Settings Based on AWS (optional)
-AWS_ACCESS_KEY_ID       = LIARA_ACCESS_KEY
-AWS_SECRET_ACCESS_KEY   = LIARA_SECRET_KEY
+AWS_ACCESS_KEY_ID = LIARA_ACCESS_KEY
+AWS_SECRET_ACCESS_KEY = LIARA_SECRET_KEY
 AWS_STORAGE_BUCKET_NAME = LIARA_BUCKET_NAME
-AWS_S3_ENDPOINT_URL     = LIARA_ENDPOINT
-AWS_S3_REGION_NAME      = 'us-east-1'  
+AWS_S3_ENDPOINT_URL = LIARA_ENDPOINT
+AWS_S3_REGION_NAME = 'us-east-1'
