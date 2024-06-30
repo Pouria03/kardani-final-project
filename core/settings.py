@@ -3,7 +3,7 @@ from pathlib import Path
 import os
 
 
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -93,30 +93,36 @@ USE_I18N = True
 
 USE_TZ = True
 
-DEBUG = False
-ALLOWED_HOSTS = ['*', ]
+DEBUG = os.getenv('DEBUG', 'True')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', ['*', ])
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-
-DATABASES = {
-    'default': {
-        'ENGINE': f'django.db.backends.postgresql',
-        'NAME': os.getenv('BACKEND_DB_NAME', 'name'),
-        'HOST': os.getenv('BACKEND_DB_HOST', 'host'),
-        'USER': os.getenv('BACKEND_DB_USER', 'user'),
-        'PASSWORD': os.getenv('BACKEND_DB_PASS', 'password'),
-        'PORT': os.getenv('BACKEND_DB_PORT', '5432')
+if not DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': f'django.db.backends.postgresql',
+            'NAME': os.getenv('BACKEND_DB_NAME', 'name'),
+            'HOST': os.getenv('BACKEND_DB_HOST', 'host'),
+            'USER': os.getenv('BACKEND_DB_USER', 'user'),
+            'PASSWORD': os.getenv('BACKEND_DB_PASS', 'password'),
+            'PORT': os.getenv('BACKEND_DB_PORT', '5432')
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 
-
-# django static root path
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATIC_URL = 'static/'
+if not DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # uploads
 MEDIA_URL = '/media/'
@@ -128,8 +134,13 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 
 if DEBUG:
     STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'static'),
-    )
+            # for local machine dubugging :        
+            (os.path.join(BASE_DIR, 'static')),
+
+        )
+    
+    
+
 
 
 # Default primary key field type
