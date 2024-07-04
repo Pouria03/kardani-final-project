@@ -8,7 +8,7 @@
         "timezone": "Asia/Tehran"
 
     },
-    "app": "testdjangoapp",
+    "app": "foolad",
     "disks":[
         {
             "name": "static",
