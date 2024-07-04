@@ -1,5 +1,5 @@
 from pathlib import Path
-from dotenv import load_dotenv, dotenv_values
+from dotenv import load_dotenv
 import os
 
 
@@ -98,7 +98,11 @@ USE_I18N = True
 
 USE_TZ = True
 
-DEBUG = os.getenv('DEBUG', default='False')
+if os.getenv('DEBUG') == 'False' or 'false':
+    DEBUG = False
+else:
+    DEBUG = True
+
 ALLOWED_HOSTS = [] if DEBUG else ['*']
 
 # Database
@@ -112,6 +116,12 @@ if DEBUG:
                     
         }
     }
+
+    STATICFILES_DIRS = (
+        # for local machine dubugging :
+        (os.path.join(BASE_DIR, 'static')),
+    )
+    
 else:
     DATABASES = {
         'default': {
@@ -124,11 +134,11 @@ else:
         }
     }
 
-
-STATIC_URL = '/static/'
-
-if not DEBUG:
+    # static root
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+STATIC_URL = '/static/'    
 
 # uploads, use these if you have not implemented storage and boto3
 MEDIA_URL = '/media/'
@@ -137,13 +147,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
 
 # ckeditor
 CKEDITOR_UPLOAD_PATH = "uploads/"
-
-if DEBUG:
-    STATICFILES_DIRS = (
-        # for local machine dubugging :
-        (os.path.join(BASE_DIR, 'static')),
-    )
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
