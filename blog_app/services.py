@@ -8,7 +8,7 @@ from django.db.models import Q
 from django.shortcuts import get_object_or_404
 
 
-def get_all_posts() -> list[Post]:
+def get_all_posts() -> list:
     """Calling this
     function will return
     list of Post objects
@@ -16,7 +16,7 @@ def get_all_posts() -> list[Post]:
     return Post.objects.all().only('title', 'thumbnail', 'created_at')
 
 
-def get_post(id: int) -> Post:
+def get_post(id: int):
     """This function
     takes id as its argument
     and returns one object of Post.
