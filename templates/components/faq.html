@@ -18,7 +18,7 @@
              aria-labelledby="heading{{ forloop.counter }}"
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body bg-dark text-light">
-                   {{item.answer}}
+                   {{item.answer|safe}}
                 </div>
             </div>
         </div>

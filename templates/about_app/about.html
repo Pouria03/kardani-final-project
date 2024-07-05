@@ -7,7 +7,7 @@
         <h2>درباره {{about_company.comapny_name}}  </h2>
         <div class="ck-content">
             <p>
-            {{ about_company.description_about_company }}
+            {{ about_company.description_about_company|safe }}
         </p>
         </div>
     </div>
@@ -36,7 +36,7 @@
             <div class="col-md-6 ck-content">
                 <h2>درباره {{about_company.boss_name}}</h2>
                 <p class="about-boss-desc">
-                   {{about_company.description_about_boss}}                    
+                   {{about_company.description_about_boss|safe}}                    
                 </p>
             </div>
         </div>

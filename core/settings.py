@@ -98,10 +98,11 @@ USE_I18N = True
 
 USE_TZ = True
 
-if os.getenv('DEBUG') == 'False' or 'false':
-    DEBUG = False
-else:
-    DEBUG = True
+DEBUG = True
+# if os.getenv('DEBUG') == 'False' or 'false':
+#     DEBUG = False
+# else:
+#     DEBUG = True
 
 ALLOWED_HOSTS = [] if DEBUG else ['*']
 
