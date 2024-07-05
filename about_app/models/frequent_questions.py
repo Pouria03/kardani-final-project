@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 
 
@@ -6,7 +7,7 @@ class FrequentQuestion(models.Model):
     question = models.TextField(max_length=500,
                                 verbose_name='پرسش')
     
-    answer = models.TextField(max_length=1500,
+    answer = RichTextField(max_length=1500,
                               verbose_name='پاسخ')
 
     def __str__(self) -> str:
