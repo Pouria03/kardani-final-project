@@ -1,11 +1,11 @@
 # Project : Personal Branding Web Application
 
 
-## About Project 
+## About Project
 This project is a web application representing a personal branding which is about counseling and mentoring purposes.
 
 
-## Requirements 
+## Requirements
 * Introducing company, company applications and owner.
 * Ability of requesting counseling by users.
 * Posting contents.
@@ -16,13 +16,12 @@ This project is a web application representing a personal branding which is abou
 * Displaying provided services
 
 
-## Project phases 
+## Project phases
 * information gathering and talks
 * representing template demo
 * start writing backend (using django framework)
 * connect backend to frontend (using django framework templates)
 * writing tests
-* dockerizing project
 * deployment
 
 
@@ -31,7 +30,7 @@ This project is a web application representing a personal branding which is abou
 * html, css, bootstrap, javascript for frontend
 * postgresql for database
 * docker
-* git 
+* git
 
 
 ## Entities
@@ -50,11 +49,8 @@ This project is a web application representing a personal branding which is abou
 * testing views
 * testing forms
 
-## Dockerizing project
-make project isolated and dockerized using docker techology
-
 ## Deployment
-creating acount on pythonanywhere domain and deploying project on the host.
+for deployment don't forget to set DEBUG to True in settings.py
 
 ## Project structure
 --core
@@ -62,7 +58,7 @@ creating acount on pythonanywhere domain and deploying project on the host.
     --settings
     --urls
     --wsgi
-    
+
   --*_app
      --models
      --views
@@ -78,18 +74,9 @@ creating acount on pythonanywhere domain and deploying project on the host.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## to run this web app on your local machine :
+> go to /core/core/settings.py, then set DEBUG to True.
+> install python >=3.10
+> go to terminal and run pip install -r requirements.txt
+> run python manage.py migrate
+> run python manage.py runerver
